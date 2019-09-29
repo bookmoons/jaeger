@@ -7,41 +7,41 @@ dist: trusty
 
 jobs:
   include:
-  - go: "1.12.1"
-    env:
-    - TESTS=true
-    - COVERAGE=true
-  - go: "1.12.1"
-    env:
-    - PROTO_GEN_TEST=true
-  - go: "1.12.1"
-    env:
-    - ALL_IN_ONE=true
-  - go: "1.12.1"
-    env:
-    - CROSSDOCK=true
-  - go: "1.12.1"
-    env:
-    - DOCKER=true
-    - DEPLOY=true
-  - go: "1.12.1"
-    env:
-    - ES_INTEGRATION_TEST=true
-  - go: "1.12.1"
-    env:
-    - KAFKA_INTEGRATION_TEST=true
-  - go: "1.12.1"
-    env:
-    - CASSANDRA_INTEGRATION_TEST=true
-  - go: "1.12.1"
-    env:
-    - HOTROD=true
+  # - go: "1.12.1"
+  #   env:
+  #   - TESTS=true
+  #   - COVERAGE=true
+  # - go: "1.12.1"
+  #   env:
+  #   - PROTO_GEN_TEST=true
+  # - go: "1.12.1"
+  #   env:
+  #   - ALL_IN_ONE=true
+  # - go: "1.12.1"
+  #   env:
+  #   - CROSSDOCK=true
+  # - go: "1.12.1"
+  #   env:
+  #   - DOCKER=true
+  #   - DEPLOY=true
+  # - go: "1.12.1"
+  #   env:
+  #   - ES_INTEGRATION_TEST=true
+  # - go: "1.12.1"
+  #   env:
+  #   - KAFKA_INTEGRATION_TEST=true
+  # - go: "1.12.1"
+  #   env:
+  #   - CASSANDRA_INTEGRATION_TEST=true
+  # - go: "1.12.1"
+  #   env:
+  #   - HOTROD=true
   - stage: Fuzz regression
     dist: bionic
     go: 1.12.x
     script: ./scripts/travis/fuzzit.sh local-regression
   - stage: Fuzz
-    if: branch = master AND type IN (push)
+    # if: branch = master AND type IN (push)
     dist: bionic
     go: 1.12.x
     script: ./scripts/travis/fuzzit.sh fuzzing
